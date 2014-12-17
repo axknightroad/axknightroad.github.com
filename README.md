@@ -1,5 +1,3 @@
 myBlog
 =======
-myBlog buding...
-
-just for test...
+my site
