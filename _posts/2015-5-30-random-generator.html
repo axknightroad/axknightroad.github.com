@@ -22,7 +22,7 @@ while (flag) {
   }
 */
 function addItem() {
-  var list = ""
+  var list = "候选列表"+"<br>"
   for (var i = 0; i < items.length; i++) {
     var j=i+1;
     list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
@@ -33,7 +33,7 @@ function addItem() {
     items.push(temp);
     document.getElementById("inputText").value=null;
   }
-  var list = ""
+  var list = "候选列表"+"<br>"
   for (var i = 0; i < items.length; i++) {
     var j=i+1;
     list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
@@ -49,7 +49,7 @@ function deleteItem() {
   }
   now += "请输入要删除的候选项的序号"
   */
-  var list = ""
+  var list = "候选列表"+"<br>"
   for (var i = 0; i < items.length; i++) {
     var j=i+1;
     list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
@@ -61,7 +61,7 @@ function deleteItem() {
     items.splice(parseInt(temp)-1,1);
     document.getElementById("inputText").value=null;
   }
-  var list = ""
+  var list = "候选列表"+"<br>"
   for (var i = 0; i < items.length; i++) {
     var j=i+1;
     list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
@@ -77,7 +77,7 @@ function generate() {
 }
 
 function showItem() {
-  var list = ""
+  var list = "候选列表"+"<br>"
   for (var i = 0; i < items.length; i++) {
     var j=i+1;
     list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
@@ -109,12 +109,13 @@ function showItem() {
 <p>
   当您添加或删除候选项时，会自动显示当前候选列表，如果您在生成推荐结果后还想查看候选列表，也可以点击 <code>Show items</code> 按钮进行查看。
 </p>
+<p>
 <input type="text" name="inputText" id="inputText"></input>
+</p>
 <button onclick="addItem()" class="button button-glow button-border button-rounded button-primary">Add item</button>
 <button onclick="deleteItem()" class="button button-glow button-border button-rounded button-primary ">Delete item</button>
 <button onclick="generate()" class="button button-glow button-border button-rounded button-primary ">Generate</button>
 <button onclick="showItem()" class="button button-glow button-border button-rounded button-primary ">Show items</button>
-<p>候选列表</p>
 <p id = "result"></p>
 
 
