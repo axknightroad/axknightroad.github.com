@@ -32,9 +32,9 @@ function deleteItem() {
     now += "第"+i.toString()+"个选项是 "+items[i]+"\n";
   }
   now += "请输入要删除的候选项的序号"
-  var temp = "";
   var temp = prompt(now,"候选项");
-  if (temp != "") {
+  console.log(temp);
+  if (temp != null) {
     items.splice(parseInt(temp),1);
   }
 }
