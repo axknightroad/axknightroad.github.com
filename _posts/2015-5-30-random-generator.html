@@ -29,7 +29,7 @@ function addItem() {
   }
   document.getElementById("result").innerHTML=(list);
   var temp = document.getElementById("inputText").value
-  if (temp != null) {
+  if (temp != null && temp != "") {
     items.push(temp);
     document.getElementById("inputText").value=null;
   }
