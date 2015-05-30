@@ -54,7 +54,7 @@ function deleteItem() {
     list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
   }
   document.getElementById("result").innerHTML=(list);
-  var temp = prompt("请输入要删除的选项的序号，即下方显示的第x个选项中的数字x的值","");
+  var temp = prompt("请输入要删除的选项的序号，即下方显示的第x个候选项中的数字x的值","");
   console.log(temp);
   if (temp != null && temp >= 1 && temp <= items.length) {
     items.splice(parseInt(temp)-1,1);
