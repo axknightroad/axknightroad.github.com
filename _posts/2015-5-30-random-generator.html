@@ -70,6 +70,13 @@ function showItem() {
     document.getElementById("result").innerHTML=(list);
   }
 }
+
+function clear(){
+  while (items.length) {
+    items.pop();
+  }
+  showItem();
+}
   /*for (var i = 0; i < my_options.length; i++) {
     document.write(my_options[i] + "<br>");
   }
@@ -93,7 +100,7 @@ function showItem() {
   添加错了？没关系，只要在文本框中输入您输错选项的序号(就是下方候选列表中第x个候选项里的数字x)，然后点击<code>Delete item</code> 按钮，就能轻松删除错误的添加项。
 </p>
 <p>
-  当您添加或删除候选项时，会自动显示当前候选列表，如果您在生成推荐结果后还想查看候选列表，也可以点击 <code>Show items</code> 按钮进行查看。
+  要清空候选列表，重新为别的选项进行推荐？直接点击 <code>Clear list</code> 按钮即可。
 </p>
 <p>
 <input type="text" name="inputText" id="inputText"></input>
@@ -101,7 +108,7 @@ function showItem() {
 <button onclick="addItem()" class="button button-glow button-border button-rounded button-primary">Add item</button>
 <button onclick="deleteItem()" class="button button-glow button-border button-rounded button-primary ">Delete item</button>
 <button onclick="generate()" class="button button-glow button-border button-rounded button-primary ">Generate</button>
-<button onclick="showItem()" class="button button-glow button-border button-rounded button-primary ">Show items</button>
+<button onclick="showItem()" class="button button-glow button-border button-rounded button-primary ">Clear list</button>
 <p id = "result"></p>
 
 
