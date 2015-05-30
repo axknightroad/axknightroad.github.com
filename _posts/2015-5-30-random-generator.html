@@ -22,37 +22,68 @@ while (flag) {
   }
 */
 function addItem() {
-  var temp = prompt("请输入候选项","");
-  items.push(temp);
+  var list = ""
+  for (var i = 0; i < items.length; i++) {
+    var j=i+1;
+    list += "第"+j.toString()+"个选项是 "+items[i]+"<br>";
+  }
+  document.getElementById("result").innerHTML=(list);
+  var temp = prompt("请输入选项","候选项");
+  if (temp != null) {
+    items.push(temp);
+  }
+  var list = ""
+  for (var i = 0; i < items.length; i++) {
+    var j=i+1;
+    list += "第"+j.toString()+"个选项是 "+items[i]+"<br>";
+  }
+  document.getElementById("result").innerHTML=(list);
 }
 
 function deleteItem() {
+  /*
   var now ="";
   for (var i = 0; i < items.length; i++) {
     now += "第"+i.toString()+"个选项是 "+items[i]+"\n";
   }
   now += "请输入要删除的候选项的序号"
-  var temp = prompt(now,"");
-  console.log(temp);
-  if (temp != null) {
-    items.splice(parseInt(temp),1);
+  */
+  var list = ""
+  for (var i = 0; i < items.length; i++) {
+    var j=i+1;
+    list += "第"+j.toString()+"个选项是 "+items[i]+"<br>";
   }
+  document.getElementById("result").innerHTML=(list);
+  var temp = prompt("请输入要删除的选项的序号","候选项");
+  console.log(temp);
+  if (temp != null && temp >= 1 && temp <= items.length) {
+    items.splice(parseInt(temp)-1,1);
+  }
+  var list = ""
+  for (var i = 0; i < items.length; i++) {
+    var j=i+1;
+    list += "第"+j.toString()+"个选项是 "+items[i]+"<br>";
+  }
+  document.getElementById("result").innerHTML=(list);
 }
 
 function generate() {
   var result = parseInt(Math.random()*items.length);
   document.getElementById("result").innerHTML=("我们推荐您选择 "+items[result] +"<br>");
+}
+
+function showItem() {
+  var list = ""
   for (var i = 0; i < items.length; i++) {
-    console.log(items[j]);
+    var j=i+1;
+    list += "第"+j.toString()+"个选项是 "+items[i]+"<br>";
   }
+  document.getElementById("result").innerHTML=(list);
 }
   /*for (var i = 0; i < my_options.length; i++) {
     document.write(my_options[i] + "<br>");
   }
   */
-  console.log(parseInt(2.9))
-
-
 </script>
 
 <p>选择困难症患者的福音！</p>
