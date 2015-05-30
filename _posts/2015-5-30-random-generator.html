@@ -1,6 +1,6 @@
 ---
 layout: post-layouts
-title: 随机选择器
+title: 随机推荐器
 ---
 <!--
 <h2>{{ page.title }}</h2>
@@ -32,8 +32,11 @@ function deleteItem() {
     now += "第"+i.toString()+"个选项是 "+items[i]+"\n";
   }
   now += "请输入要删除的候选项的序号"
+  var temp = "";
   var temp = prompt(now,"候选项");
-  items.splice(parseInt(temp),1);
+  if (temp != "") {
+    items.splice(parseInt(temp),1);
+  }
 }
 
 function generate() {
@@ -52,7 +55,17 @@ function generate() {
 
 </script>
 
-<p>随机选择器</p>
+<p>选择困难症患者的福音！</p>
+<p>
+  你还在为晚饭吃什么而烦恼吗？你还在为几本书中选择买哪一本烦恼吗？在面对两个难以抉择的选项的时候，你还在用抛硬币来决定吗？
+  如果有两个以上选项呢？
+</p>
+<p>
+  快来试试这个随机选择器吧！只要先选择 Add item 一样一样输入你要选择的东西，然后点下 Generate result，就可以轻松帮你随机推荐一个选项啦！
+</p>
+<p>
+  添加错了？没关系，点下 Delete item 就能轻松删除错误的添加项。
+</p>
 <p>
     <button onclick="addItem()" class="button button-glow button-border button-rounded button-primary">Add item</button>
     <button onclick="deleteItem()" class="button button-glow button-border button-rounded button-primary ">Delete item</button>
