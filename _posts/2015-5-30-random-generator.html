@@ -28,9 +28,10 @@ function addItem() {
     list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
   }
   document.getElementById("result").innerHTML=(list);
-  var temp = prompt("请输入需要帮您随机推荐的候选项的名称","");
+  var temp = document.getElementById("inputText").value
   if (temp != null) {
     items.push(temp);
+    document.getElementById("inputText").value=null;
   }
   var list = ""
   for (var i = 0; i < items.length; i++) {
@@ -54,10 +55,11 @@ function deleteItem() {
     list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
   }
   document.getElementById("result").innerHTML=(list);
-  var temp = prompt("请输入要删除的选项的序号，即下方显示的第x个候选项中的数字x的值","");
+  var temp = document.getElementById("inputText").value;
   console.log(temp);
   if (temp != null && temp >= 1 && temp <= items.length) {
     items.splice(parseInt(temp)-1,1);
+    document.getElementById("inputText").value=null;
   }
   var list = ""
   for (var i = 0; i < items.length; i++) {
@@ -94,19 +96,25 @@ function showItem() {
   如果有两个以上选项呢？
 </p>
 <p>
-  快来试试这个随机推荐器吧！您需要做的只是点击 <code>Add item</code> 按钮，逐一输入你要选择的东西，然后点下 <code>Generate</code>
-  按钮，我们就会帮您随机推荐一个选项，免去您选择的烦恼。
+  快来试试这个随机推荐器吧！您只需要在下面的文本框内输入需要帮您随机推荐的的选项，然后点击 <code>Add item</code>
+  按钮，就可以将选项加入候选列表中。
 </p>
 <p>
-  添加错了？没关系，点下 <code>Delete item</code> 按钮就能轻松删除错误的添加项。
+  当您输入完所有候选项后，只需要点下 <code>Generate</code>
+  按钮，我们就会在候选列表中随机帮您随机推荐一个选项，免去您选择的烦恼。
 </p>
 <p>
-  当您添加或删除候选项时，会自动显示当前待随机推荐的候选项，如果您在生成推荐结果后还想查看候选项，也可以点击 <code>Show items</code> 按钮进行查看。
+  添加错了？没关系，只要在文本框中输入您输错选项的序号(就是下方候选列表中第x个候选项里的数字x)，然后点击<code>Delete item</code> 按钮，就能轻松删除错误的添加项。
 </p>
+<p>
+  当您添加或删除候选项时，会自动显示当前候选列表，如果您在生成推荐结果后还想查看候选列表，也可以点击 <code>Show items</code> 按钮进行查看。
+</p>
+<input type="text" name="inputText" id="inputText"></input>
 <button onclick="addItem()" class="button button-glow button-border button-rounded button-primary">Add item</button>
 <button onclick="deleteItem()" class="button button-glow button-border button-rounded button-primary ">Delete item</button>
 <button onclick="generate()" class="button button-glow button-border button-rounded button-primary ">Generate</button>
 <button onclick="showItem()" class="button button-glow button-border button-rounded button-primary ">Show items</button>
+<p>候选列表</p>
 <p id = "result"></p>
 
 
