@@ -21,24 +21,15 @@ while (flag) {
     }
   }
 */
+
 function addItem() {
-  var list = "候选列表"+"<br>"
-  for (var i = 0; i < items.length; i++) {
-    var j=i+1;
-    list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
-  }
-  document.getElementById("result").innerHTML=(list);
+  showItem()
   var temp = document.getElementById("inputText").value
   if (temp != null && temp != "") {
     items.push(temp);
     document.getElementById("inputText").value=null;
   }
-  var list = "候选列表"+"<br>"
-  for (var i = 0; i < items.length; i++) {
-    var j=i+1;
-    list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
-  }
-  document.getElementById("result").innerHTML=(list);
+  showItem()
 }
 
 function deleteItem() {
@@ -49,24 +40,14 @@ function deleteItem() {
   }
   now += "请输入要删除的候选项的序号"
   */
-  var list = "候选列表"+"<br>"
-  for (var i = 0; i < items.length; i++) {
-    var j=i+1;
-    list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
-  }
-  document.getElementById("result").innerHTML=(list);
+  showItem()
   var temp = document.getElementById("inputText").value;
   console.log(temp);
   if (temp != null && temp >= 1 && temp <= items.length) {
     items.splice(parseInt(temp)-1,1);
     document.getElementById("inputText").value=null;
   }
-  var list = "候选列表"+"<br>"
-  for (var i = 0; i < items.length; i++) {
-    var j=i+1;
-    list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
-  }
-  document.getElementById("result").innerHTML=(list);
+  showItem()
 }
 
 function generate() {
@@ -77,12 +58,17 @@ function generate() {
 }
 
 function showItem() {
-  var list = "候选列表"+"<br>"
-  for (var i = 0; i < items.length; i++) {
-    var j=i+1;
-    list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
+  if (items.length == 0) {
+    document.getElementById("result").innerHTML=("当前无候选项，候选列表为空<br>");
   }
-  document.getElementById("result").innerHTML=(list);
+  else {
+    var list = "候选列表"+"<br>"
+    for (var i = 0; i < items.length; i++) {
+      var j=i+1;
+      list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
+    }
+    document.getElementById("result").innerHTML=(list);
+  }
 }
   /*for (var i = 0; i < my_options.length; i++) {
     document.write(my_options[i] + "<br>");
