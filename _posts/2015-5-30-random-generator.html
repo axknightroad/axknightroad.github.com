@@ -68,8 +68,10 @@ function deleteItem() {
 }
 
 function generate() {
-  var result = parseInt(Math.random()*items.length);
-  document.getElementById("result").innerHTML=("我们推荐您选择 "+items[result] +"<br>");
+  if (items.length > 0) {
+    var result = parseInt(Math.random()*items.length);
+    document.getElementById("result").innerHTML=("我们推荐您选择 "+items[result] +"<br>");
+  }
 }
 
 function showItem() {
