@@ -55,11 +55,11 @@ function showItem() {
   document.getElementById("generate-result").innerHTML=("");
   document.getElementById("table-name").innerHTML=("候选列表");
   if (items.length == 0) {
-    document.getElementById("thead-name").innerHTML=("<tr><th>当前候选列表为空，没有候选项</th></tr>");
+    document.getElementById("thead-name").innerHTML=("<tr><th>"+"当前候选列表为空，没有候选项"+"</th></tr>");
     document.getElementById("items-list").innerHTML=("");
   }
   else {
-    var thead-name ="<tr><th>"+"序号"+"</th><th>"+"候选项"+"</th></tr>"
+    var thead-name ="<tr><th>"+"序号"+"</th><th>"+"候选项"+"</th></tr>";
     var list = "";
     for (var i = 0; i < items.length; i++) {
       var j=i+1;
