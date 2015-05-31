@@ -50,9 +50,9 @@ function generate() {
 
 function showItem() {
   document.getElementById("generate-result").innerHTML=("");
-  document.getElementById("table-name").innerHTML=("候选列表");
   if (items.length == 0) {
-    document.getElementById("table-name").innerHTML=("当前候选列表为空，没有候选项");
+    document.getElementById("generate-result").innerHTML=("当前候选列表为空，没有候选项");
+    document.getElementById("table-name").innerHTML=("");
     document.getElementById("thead-name").innerHTML=("");
     document.getElementById("items-list").innerHTML=("");
   }
