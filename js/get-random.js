@@ -50,31 +50,15 @@ function generate() {
 
 function showItem() {
   if (items.length == 0) {
-    document.getElementById("result").innerHTML=("当前无候选项，候选列表为空<br>");
+    document.getElementById("items-list").innerHTML=("");
   }
   else {
-    var list = "
-    <table class='table'>
-      <caption>候选列表</caption>
-      <thead>
-        <tr>
-          <th>序号</th>
-          <th>候选项</th>
-        </tr>
-      </thead>
-      <tbody>"
+    var list = "";
     for (var i = 0; i < items.length; i++) {
       var j=i+1;
-      list += "
-      <tr>
-        <td>"+j.toString()+"</td>
-        <td>"+items[i]+"</td>
-      </tr>";
+      list += "<tr><td>"+j.toString()+"</td><td>"+items[i]+"</td></tr>";
     }
-    list += "
-    </tbody>
-   </table>"
-    document.getElementById("result").innerHTML=(list);
+    document.getElementById("items-list").innerHTML=(list);
   }
 }
 
