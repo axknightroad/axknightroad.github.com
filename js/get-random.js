@@ -42,22 +42,30 @@ function deleteItem() {
 }
 
 function generate() {
+  document.getElementById("table-name").innerHTML=("");
+  document.getElementById("thead-name").innerHTML=("");
+  document.getElementById("items-list").innerHTML=("");
   if (items.length > 0) {
     var result = parseInt(Math.random()*items.length);
-    document.getElementById("result").innerHTML=("我们推荐您选择 "+items[result] +"<br>");
+    document.getElementById("generate-result").innerHTML=("我们推荐您选择 "+items[result] +"<br>");
   }
 }
 
 function showItem() {
+  document.getElementById("generate-result").innerHTML=("");
+  document.getElementById("table-name").innerHTML=("候选列表");
   if (items.length == 0) {
+    document.getElementById("thead-name").innerHTML=("<tr><th>当前候选列表为空，没有候选项</th></tr>");
     document.getElementById("items-list").innerHTML=("");
   }
   else {
+    var thead-name ="<tr><th>序号</th><th>候选项</th></tr>"
     var list = "";
     for (var i = 0; i < items.length; i++) {
       var j=i+1;
       list += "<tr><td>"+j.toString()+"</td><td>"+items[i]+"</td></tr>";
     }
+    document.getElementById("thead-name").innerHTML=(thead-name);
     document.getElementById("items-list").innerHTML=(list);
   }
 }
