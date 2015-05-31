@@ -55,7 +55,8 @@ function showItem() {
   document.getElementById("generate-result").innerHTML=("");
   document.getElementById("table-name").innerHTML=("候选列表");
   if (items.length == 0) {
-    document.getElementById("thead-name").innerHTML=("<tr><th>"+"当前候选列表为空，没有候选项"+"</th></tr>");
+    document.getElementById("table-name").innerHTML=("当前候选列表为空，没有候选项");
+    document.getElementById("thead-name").innerHTML=("");
     document.getElementById("items-list").innerHTML=("");
   }
   else {
@@ -66,6 +67,7 @@ function showItem() {
       var j=i+1;
       list += "<tr><td>"+j.toString()+"</td><td>"+items[i]+"</td></tr>";
     }
+    document.getElementById("table-name").innerHTML=("候选列表");
     document.getElementById("thead-name").innerHTML=(theadName);
     document.getElementById("items-list").innerHTML=(list);
   }
