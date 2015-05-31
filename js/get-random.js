@@ -59,7 +59,8 @@ function showItem() {
     document.getElementById("items-list").innerHTML=("");
   }
   else {
-    var thead-name ="<tr><th>"+"序号"+"</th><th>"+"候选项"+"</th></tr>";
+    var thead-name = "";
+    thead-name += "<tr><th>"+"序号"+"</th><th>"+"候选项"+"</th></tr>";
     var list = "";
     for (var i = 0; i < items.length; i++) {
       var j=i+1;
