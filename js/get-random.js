@@ -59,14 +59,14 @@ function showItem() {
     document.getElementById("items-list").innerHTML=("");
   }
   else {
-    var thead-name = "";
-    thead-name += "<tr><th>"+"序号"+"</th><th>"+"候选项"+"</th></tr>";
+    var theadName = "";
+    theadName += "<tr><th>"+"序号"+"</th><th>"+"候选项"+"</th></tr>";
     var list = "";
     for (var i = 0; i < items.length; i++) {
       var j=i+1;
       list += "<tr><td>"+j.toString()+"</td><td>"+items[i]+"</td></tr>";
     }
-    document.getElementById("thead-name").innerHTML=(thead-name);
+    document.getElementById("thead-name").innerHTML=(theadName);
     document.getElementById("items-list").innerHTML=(list);
   }
 }
