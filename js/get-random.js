@@ -53,11 +53,27 @@ function showItem() {
     document.getElementById("result").innerHTML=("当前无候选项，候选列表为空<br>");
   }
   else {
-    var list = "候选列表"+"<br>"
+    var list = "
+    <table class='table'>
+      <caption>候选列表</caption>
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>候选项</th>
+        </tr>
+      </thead>
+      <tbody>"
     for (var i = 0; i < items.length; i++) {
       var j=i+1;
-      list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
+      list += "
+      <tr>
+        <td>"+j.toString()+"</td>
+        <td>"+items[i]+"</td>
+      </tr>";
     }
+    list += "
+    </tbody>
+   </table>"
     document.getElementById("result").innerHTML=(list);
   }
 }
