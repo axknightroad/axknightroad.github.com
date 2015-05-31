@@ -12,30 +12,61 @@ while (flag) {
     }
   }
 */
+
 function addItem() {
-  var temp = prompt("请输入候选项","候选项");
-  items.push(temp);
+  showItem()
+  var temp = document.getElementById("inputText").value
+  if (temp != null && temp != "") {
+    items.push(temp);
+    document.getElementById("inputText").value=null;
+  }
+  showItem()
 }
 
 function deleteItem() {
+  /*
   var now ="";
   for (var i = 0; i < items.length; i++) {
     now += "第"+i.toString()+"个选项是 "+items[i]+"\n";
   }
   now += "请输入要删除的候选项的序号"
-  var temp = prompt(now,"候选项");
-  items.splice(parseInt(temp),1);
+  */
+  showItem()
+  var temp = document.getElementById("inputText").value;
+  console.log(temp);
+  if (temp != null && temp >= 1 && temp <= items.length) {
+    items.splice(parseInt(temp)-1,1);
+    document.getElementById("inputText").value=null;
+  }
+  showItem()
 }
 
 function generate() {
-  var result = parseInt(Math.random()*items.length);
-  document.getElementById("result").innerHTML=("我们推荐您选择 "+items[result] +"<br>");
-  for (var i = 0; i < items.length; i++) {
-    console.log(items[j]);
+  if (items.length > 0) {
+    var result = parseInt(Math.random()*items.length);
+    document.getElementById("result").innerHTML=("我们推荐您选择 "+items[result] +"<br>");
   }
+}
+
+function showItem() {
+  if (items.length == 0) {
+    document.getElementById("result").innerHTML=("当前无候选项，候选列表为空<br>");
+  }
+  else {
+    var list = "候选列表"+"<br>"
+    for (var i = 0; i < items.length; i++) {
+      var j=i+1;
+      list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
+    }
+    document.getElementById("result").innerHTML=(list);
+  }
+}
+
+function clearItems(){
+  items.splice(0,items.length);
+  showItem();
 }
   /*for (var i = 0; i < my_options.length; i++) {
     document.write(my_options[i] + "<br>");
   }
   */
-  console.log(parseInt(2.9))

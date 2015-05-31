@@ -6,109 +6,47 @@ title: 随机推荐器
 <h2>{{ page.title }}</h2>
 -->
 
-<script type="text/javascript">
-var items = new Array();
-var flag = true;
-
-/*
-while (flag) {
-    var temp = prompt("请输入候选项，输入e停止","");
-    if (temp == "e") {
-      flag = false;
-    }
-    else {
-      my_options[i++] = temp;
-    }
-  }
-*/
-
-function addItem() {
-  showItem()
-  var temp = document.getElementById("inputText").value
-  if (temp != null && temp != "") {
-    items.push(temp);
-    document.getElementById("inputText").value=null;
-  }
-  showItem()
-}
-
-function deleteItem() {
-  /*
-  var now ="";
-  for (var i = 0; i < items.length; i++) {
-    now += "第"+i.toString()+"个选项是 "+items[i]+"\n";
-  }
-  now += "请输入要删除的候选项的序号"
-  */
-  showItem()
-  var temp = document.getElementById("inputText").value;
-  console.log(temp);
-  if (temp != null && temp >= 1 && temp <= items.length) {
-    items.splice(parseInt(temp)-1,1);
-    document.getElementById("inputText").value=null;
-  }
-  showItem()
-}
-
-function generate() {
-  if (items.length > 0) {
-    var result = parseInt(Math.random()*items.length);
-    document.getElementById("result").innerHTML=("我们推荐您选择 "+items[result] +"<br>");
-  }
-}
-
-function showItem() {
-  if (items.length == 0) {
-    document.getElementById("result").innerHTML=("当前无候选项，候选列表为空<br>");
-  }
-  else {
-    var list = "候选列表"+"<br>"
-    for (var i = 0; i < items.length; i++) {
-      var j=i+1;
-      list += "第"+j.toString()+"个候选项是 "+items[i]+"<br>";
-    }
-    document.getElementById("result").innerHTML=(list);
-  }
-}
-
-function clearItems(){
-  items.splice(0,items.length);
-  showItem();
-}
-  /*for (var i = 0; i < my_options.length; i++) {
-    document.write(my_options[i] + "<br>");
-  }
-  */
-</script>
-
-<p>选择困难症患者的福音！</p>
-<p>
-  您还在为晚饭吃什么而烦恼吗？您还在为几本书中选择买哪一本烦恼吗？在面对两个难以抉择的选项的时候，您还在用抛硬币来决定吗？
-  如果有两个以上选项呢？
-</p>
-<p>
-  快来试试这个随机推荐器吧！您只需要在下面的文本框内，输入需要帮您随机推荐的选项，然后点击 <code>Add item</code>
-  按钮，就可以将选项加入候选列表中。
-</p>
-<p>
-  当您输入完所有候选项后，只需要点下 <code>Generate</code>
-  按钮，我们就会在候选列表中随机帮您推荐一个选项，免去您选择的烦恼。
-</p>
-<p>
-  添加错了？没关系，只要在文本框中输入您输错选项的序号(就是下方候选列表中第x个候选项里的数字x)，然后点击<code>Delete item</code> 按钮，就能轻松删除错误的添加项。
-</p>
-<p>
-  要清空候选列表，重新输入？直接点击 <code>Clear list</code> 按钮即可。
-</p>
-<p>
-<input type="text" name="inputText" id="inputText"></input>
-</p>
-<button onclick="addItem()" class="button button-glow button-border button-rounded button-primary">Add item</button>
-<button onclick="deleteItem()" class="button button-glow button-border button-rounded button-primary ">Delete item</button>
-<button onclick="generate()" class="button button-glow button-border button-rounded button-primary ">Generate</button>
-<button onclick="clearItems()" class="button button-glow button-border button-rounded button-primary ">Clear list</button>
-<p id = "result"></p>
-
+<div id="introduce">
+  <p>选择困难症患者的福音！</p>
+  <p>
+    您还在为晚饭吃什么而烦恼吗？您还在为几本书中选择买哪一本烦恼吗？在面对两个难以抉择的选项的时候，您还在用抛硬币来决定吗？
+    如果有两个以上选项呢？
+  </p>
+  <p>
+    快来试试这个随机推荐器吧！您只需要在下面的文本框内，输入需要帮您随机推荐的选项，然后点击 <code>Add item</code>
+    按钮，就可以将选项加入候选列表中。
+  </p>
+  <p>
+    当您输入完所有候选项后，只需要点下 <code>Generate</code>
+    按钮，我们就会在候选列表中随机帮您推荐一个选项，免去您选择的烦恼。
+  </p>
+  <p>
+    添加错了？没关系，只要在文本框中输入您输错选项的序号(就是下方候选列表中第x个候选项里的数字x)，然后点击<code>Delete item</code> 按钮，就能轻松删除错误的添加项。
+  </p>
+  <p>
+    要清空候选列表，重新输入？直接点击 <code>Clear list</code> 按钮即可。
+  </p>
+</div>
+<div id="get-random">
+  <p>
+    <input type="text" name="inputText" id="inputText" class="form-control" placeholder="请输入候选项">
+  </p>
+  <ul class ="list-inline">
+    <li>
+      <button onclick="addItem()" class="button button-glow button-border button-rounded button-primary">Add item</button>
+    </li>
+    <li>
+      <button onclick="deleteItem()" class="button button-glow button-border button-rounded button-primary ">Delete item</button>
+    </li>
+    <li>
+      <button onclick="generate()" class="button button-glow button-border button-rounded button-primary ">Generate</button>
+    </li>
+    <li>
+      <button onclick="clearItems()" class="button button-glow button-border button-rounded button-primary ">Clear list</button>
+    </li>
+  </ul>
+  <ul id = "result"></ul>
+</div>
 
 
 <!--
