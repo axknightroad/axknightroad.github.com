@@ -76,11 +76,11 @@ function clearItems(){
 }
 
 document.onkeydown=function(event){
-e = event ? event :(window.event ? window.event : null);
-var temp = document.getElementById("inputText").value
-if(e.keyCode==13 && temp!="" && temp!=null){
-//执行的方法
-addItem(); 
+  e = event ? event :(window.event ? window.event : null);
+  var temp = document.getElementById("inputText").value
+  if(e.keyCode==13 && temp!="" && temp!=null){
+    addItem();
+  }
 }
   /*for (var i = 0; i < my_options.length; i++) {
     document.write(my_options[i] + "<br>");
