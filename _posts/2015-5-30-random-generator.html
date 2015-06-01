@@ -27,10 +27,13 @@ title: 随机推荐器
     要清空候选列表，重新输入？直接点击 <code>Clear list</code> 按钮即可。
   </p>
 </div>
+
+
 <div id="get-random">
   <p>
     <input type="text" name="inputText" id="inputText" class="form-control" placeholder="请输入候选项">
   </p>
+
   <ul class="list-inline">
     <li class="random-button-li">
       <button onclick="addItem()" class="button button-glow button-border button-rounded button-primary">Add item</button>
@@ -45,9 +48,13 @@ title: 随机推荐器
       <button onclick="clearItems()" class="button button-glow button-border button-rounded button-primary ">Clear list</button>
     </li>
   </ul>
+  
 </div>
+
+
 <p id="generate-result"></p>
-<div class="table-responsive" id="result">
+
+<div class="table-responsive" id="items-table">
   <table class='table'>
     <caption id="table-name"></caption>
     <thead id="thead-name"></thead>
