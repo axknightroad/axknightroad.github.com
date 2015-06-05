@@ -1,5 +1,15 @@
-.random-button-li {
-  display: block;
-  margin-bottom: 20px;
-  padding: 0;
+@media (max-width : 960px) {
+  .list-inline>li {
+    display: block;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  .random-button-li button{
+    width: 100%;
+  }
+  
+  .table-responsive {
+  border: 1px none #ddd;
+  }
 }
