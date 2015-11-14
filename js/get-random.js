@@ -35,7 +35,7 @@ function deleteItem() {
   var temp = document.getElementById("inputText").value;
   console.log(temp);
   if (temp != null && temp >= 1 && temp <= items.length) {
-    items.splice(parseInt(temp)-1,1);
+    items.splice(parseInt(temp)-1, 1);
     document.getElementById("inputText").value=null;
   }
   showItem()
