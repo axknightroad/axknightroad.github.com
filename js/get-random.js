@@ -82,6 +82,15 @@ document.onkeydown=function(event){
     addItem();
   }
 }
+
+// When they want to save the CSS.
+function saveItems() {
+  localStorage.setItem("itemList",items);
+}
+function loadItems() {
+  items = localStorage.getItem("itemList")
+  showItem();
+}
   /*for (var i = 0; i < my_options.length; i++) {
     document.write(my_options[i] + "<br>");
   }
