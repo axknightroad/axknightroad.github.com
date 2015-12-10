@@ -14,8 +14,8 @@
   .table-responsive {
   border: 1px none #ddd;
   }
+}
 
-  .button {
-    padding: 0 30px;
-  }
+.button {
+  padding: 0 30px;
 }
