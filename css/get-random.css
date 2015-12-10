@@ -3,15 +3,19 @@
     display: block;
     padding-right: 5px;
     padding-left: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   .random-button-li button{
-    width: 60%;
+    width: 70%;
     margin: 0 15%;
   }
 
   .table-responsive {
   border: 1px none #ddd;
+  }
+
+  .button {
+    padding: 0 30px;
   }
 }
