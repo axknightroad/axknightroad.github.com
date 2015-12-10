@@ -85,10 +85,10 @@ document.onkeydown=function(event){
 
 // When they want to save the CSS.
 function saveItems() {
-  localStorage.setItem("itemList",items);
+  localStorage.setItem("itemList",JSON.stringify(items));
 }
 function loadItems() {
-  items = localStorage.getItem("itemList")
+  items = JSON.parse(localStorage.getItem("itemList"));
   showItem();
 }
   /*for (var i = 0; i < my_options.length; i++) {
