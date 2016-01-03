@@ -14,10 +14,12 @@ Emacs 作为神的编辑器，一直深受广大程序员喜爱。早些年用�
 
 最后说下，由于不同人的 Emacs 配置不同，该配置不一定有用。
 
-    ;;command + left, 回到行首
+    ;;command + left, 光标回到行首
     (define-key key-translation-map [(s-left)] [(control a)])
-    ;;command + right, 回到行尾
+
+    ;;command + right, 光标移到行尾
     (define-key key-translation-map [(s-right)] [(control e)])
+
     ;;command + delete, 删除从光标到行首的字符
     (global-set-key [(s-backspace)] 'kill-line-before-cursor)
 
