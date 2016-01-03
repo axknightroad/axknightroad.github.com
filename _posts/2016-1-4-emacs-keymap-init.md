@@ -1,6 +1,6 @@
 ---
 layout: post-layouts
-title: emacs中command相关快捷键设置
+title: emacs中几个command相关快捷键设置
 bg: '/img/2016-1-4.jpg'
 ---
 
