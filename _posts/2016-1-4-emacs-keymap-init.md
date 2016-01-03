@@ -1,6 +1,6 @@
 ---
 layout: post-layouts
-title: OSX下给emacs添加几个command相关快捷键配置
+title: emacs中几个 command 相关快捷键设置
 bg: '/img/2016-1-4.jpg'
 ---
 
