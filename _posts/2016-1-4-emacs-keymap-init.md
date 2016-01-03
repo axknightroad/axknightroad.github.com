@@ -11,7 +11,7 @@ bg: '/img/2016-1-4.jpg'
 但是 **emacs** 却没有这方面相关快捷键，这使我在切换编辑器时经常感到不便，然后网查了下，发现没有相关资料，可能一般使用 **emacs** 的程序员都水平比较高，不怎么用这些快捷键。
 于是抱着自己动手，丰衣足食的精神，写了这三个快捷键的相关配置，就放上来以方便有相同需求的朋友。把配置添加到 `init.el` 即可。
 
-最后说下，由于不同人的 emacs 配置不同，该配置不一定有用。
+最后说下，由于不同人的 **emacs** 配置不同，该配置不一定有用。
 
     (define-key key-translation-map [(s-left)] [(control a)])
     (define-key key-translation-map [(s-right)] [(control e)])
