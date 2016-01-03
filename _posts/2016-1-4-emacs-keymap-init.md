@@ -7,6 +7,6 @@ css: <link href="/css/get-random.css" rel="stylesheet">
 ##test
 test `test`
 
-```
+``` lisp
 test
 ```
