@@ -45,7 +45,10 @@ function generate() {
   if (items.length > 0) {
     var result = parseInt(Math.random()*items.length);
     document.getElementById("generate-result").innerHTML=("我们推荐您选择 "+items[result] +"<br>");
+    items.splice(result, 1);
+    showItem()
   }
+
 }
 
 function showItem() {
