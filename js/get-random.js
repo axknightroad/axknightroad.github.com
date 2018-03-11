@@ -44,9 +44,10 @@ function deleteItem() {
 function generate() {
   if (items.length > 0) {
     var result = parseInt(Math.random()*items.length);
-    document.getElementById("generate-result").innerHTML=("我们推荐您选择 "+items[result] +"<br>");
+    var result_item =  items[result];
     items.splice(result, 1);
     showItem()
+    document.getElementById("generate-result").innerHTML=("我们推荐您选择 "+ result_item +"<br>");
   }
 
 }
